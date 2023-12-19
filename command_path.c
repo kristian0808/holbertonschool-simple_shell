@@ -14,7 +14,7 @@ char *command_path(char *cmd)
 	path_copy = strdup(path);
 	if (path_copy == NULL)
 	{
-		fprint(stderr, "Error copying path");
+		fprintf(stderr, "Error copying path");
 		return (NULL);
 	}
 	token = strtok(path_copy, ":");

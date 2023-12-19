@@ -1,9 +1,11 @@
 #include<string.h>
+
 /**
  * command_read -reads command for input
  * @s: - points to the string of the command input
  * Return (execute(cmd_array))
  */
+
 int command_read(char *s)
 {
         int i;

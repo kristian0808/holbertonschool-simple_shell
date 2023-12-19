@@ -3,11 +3,13 @@
 #include<stdio.h>
 #include <sys/wait.h>
 #include<stdlib.h>
+
 /**
  * execute -substitutes child process with respective program
  * @cmd_arr[]: - points to the array of pointers that point to respective string of command
  * Return: (0)
  */
+
 int execute(char *cmd_arr[])
 {
         pid_t pid;

@@ -1,5 +1,13 @@
 #include "shell.h"
-
+#include<unistd.h>
+#include<stdio.h>
+#include<stdlib.h>
+/**
+ * main -entry point,displays prompt,reads command and reacts
+ * @argc: -holds the value of the nr of arguments of the command
+ * @argv: -double pointer,points to the array of pointers of the command strings
+ * Return (0)
+ */
 int main (int __attribute__((unused)) argc, char *argv[])
 {
 	char *line = NULL;

@@ -37,7 +37,7 @@ int command_read(char *s)
 	int i;
 	char *token = NULL;
 	char *cmd_array[100];
-	//if commnad is exit or env
+	/**if commnad is exit or env*/
 
 	if(strcmp(s, "exit") == 0)
 	{

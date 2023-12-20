@@ -2,6 +2,7 @@
 #include<unistd.h>
 #include<stdio.h>
 #include<stdlib.h>
+#include <stddef.h>
 
 /**
  * main -entry point,displays prompt,reads command and reacts
@@ -19,7 +20,7 @@ int main (int __attribute__((unused)) argc, char *argv[])
 
 	while (1)
 	{
-		write(1, "Bobi$", 5);
+		write(1, "$ ", 5);
 		characters = getline (&line, &buf_size, stdin);
 		if (characters == -1)
 		{

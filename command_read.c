@@ -1,33 +1,31 @@
 #include<string.h>
 #include "shell.h"
-/**
- * command_read -reads command for input
- * @s: - points to the string of the command input
- * Return (execute(cmd_array))
- */
 
+/**
+ * command_read - function that reads the commands
+ * @s: command
+ * @characters: characters of command
+ * Return: return int from execute command
+ */
 int command_read(char *s)
 {
-        int i;
-        char *token = NULL;
-        char *cmd_array[100];
-        /**if commnad is exit or env*/
+	char *token = NULL;
+	char *cmd_array[100];
+	int i = 0;
 
-        if(strcmp(s, "exit") == 0)
-        {
-                return 2;
-        }
-        if (strcmp(s, "env") == 0)
-        {
-        	return _printenv();
-        }
-        i = 0;
-        token = strtok(s, " ");
-        while (token != NULL)
-        {
-                cmd_array[i++] = token;
-                token = strtok(NULL, " ");
-        }
-        cmd_array[i] = NULL;
-        return (execute(cmd_array));
+	if (strcmp(s, "exit") == 0)
+		return (2);
+	if (strcmp(s, "env") == 0)
+		return (_printenv());
+
+	token = strtok(s, " ");
+	while (token)
+	{
+		cmd_array[i] = token;
+		i++;
+		token = strtok(NULL, " ");
+	}
+	cmd_array[i] = NULL;
+
+	return (execute(cmd_array));
 }

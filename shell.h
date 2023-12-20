@@ -17,7 +17,7 @@ char *_getenv(char *var);
 
 /* Command path */
 char *command_path(char *cmd);
-int command_read(char *s); 
+int command_read(char *s);
 int execute(char *cmd_arr[]);
 
 char *name;

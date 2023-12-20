@@ -4,7 +4,6 @@
 /**
  * command_read - function that reads the commands
  * @s: command
- * @characters: characters of command
  * Return: return int from execute command
  */
 int command_read(char *s)

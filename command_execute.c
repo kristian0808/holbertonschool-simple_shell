@@ -14,7 +14,7 @@ int execute(char *cmd_array[])
 	char *cmd = NULL;
 	pid_t pid;
 	int status;
-
+	
 	cmd = cmd_array[0];
 	exe_path = command_path(cmd);
 	if (exe_path == NULL)
@@ -36,7 +36,6 @@ int execute(char *cmd_array[])
 		perror("Error");
 		exit(1);
 	}
-
 	free(exe_path);
 	return (0);
 }

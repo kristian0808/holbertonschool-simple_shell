@@ -13,7 +13,8 @@ int execute(char *cmd_array[])
 	char *exe_path = NULL;
 	char *cmd = NULL;
 	pid_t pid;
-	int status;	
+	int status;
+
 	cmd = cmd_array[0];
 	exe_path = command_path(cmd);
 	if (exe_path == NULL)

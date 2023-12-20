@@ -1,5 +1,5 @@
 #include<string.h>
-
+#include "shell.h"
 /**
  * command_read -reads command for input
  * @s: - points to the string of the command input
@@ -19,7 +19,7 @@ int command_read(char *s)
         }
         if (strcmp(s, "env") == 0)
         {
-        return _printenv();
+        	return _printenv();
         }
         i = 0;
         token = strtok(s, " ");

@@ -20,7 +20,7 @@ int main (int __attribute__((unused)) argc, char *argv[])
 
 	while (1)
 	{
-		write(1, "$ ", 5);
+		write(1, "$ ", 2);
 		characters = getline (&line, &buf_size, stdin);
 		if (characters == -1)
 		{

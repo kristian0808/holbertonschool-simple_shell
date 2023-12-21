@@ -8,31 +8,38 @@
  * @cmd_array: First operand a pointer
  * Return: Return an int
  */
-int execute(char *cmd_array[])
+int execute(char *cmd_arr[])
 {
-	char *exe_path = NULL;
-	char *cmd = NULL;
 	pid_t pid;
+	char *exe_path;
 	int status;
 
-	cmd = cmd_array[0];
-	exe_path = command_path(cmd);
+	exe_path = command_path(cmd_arr[0]);
 	if (exe_path == NULL)
 	{
-		write(2, strcat(cmd, ": Not found\n"), strlen(cmd) + 12);
-		return (3);
+		write(1, cmd_arr[0], strlen(cmd_arr[0]));
+		write(1, ": not found\n", 12);
+		return (1);
 	}
 	pid = fork();
 	if (pid < 0)
 	{
-		perror("Error creating child\n");
-		return (-1);
+		perror("Error at creating a child process\n");
+		exit (1);
 	}
 	if (pid > 0)
-		wait(&status);
+	{
+		do {
+			waitpid(pid, &status, WUNTRACED);
+		} while (!WIFEXITED(status) && !WIFSIGNALED(status));
+		if (WEXITSTATUS(status) != 0)
+		{
+			exit(2);
+		}
+	}
 	else if (pid == 0)
 	{
-		execve(exe_path, cmd_array, environ);
+		execve(exe_path, cmd_arr, environ);
 		perror("Error");
 		exit(1);
 	}

@@ -1,4 +1,4 @@
-#include "shell.c"
+#include "shell.h"
 /**
  * _printenv - prints the environment
  * @void: void
@@ -46,4 +46,36 @@ char *_getenv(char *var)
 			return (&environ[i][len_var]);
 	}
 	return (NULL);
+}
+/**
+ * trim_whitespace - Trims leading and trailing whitespace from a string
+ * @str: The string to trim
+ */
+
+void trim_whitespace(char *str)
+{
+	int i, j;
+	int len = strlen(str);
+
+	i = 0;
+	while (str[i] == ' ' || str[i] == '\t')
+		i++;
+	if (i > 0)
+	{
+		j = 0;
+		while (str[i] != '\0')
+		{
+			str[j] = str[i];
+			i++;
+			j++;
+		}
+		str[j] = '\0';
+	}
+	len = strlen(str);
+	i = len - 1;
+	while (i >= 0 && (str[i] == ' ' || str[i] == '\t'))
+	{
+		str[i] = '\0';
+		i--;
+	}
 }

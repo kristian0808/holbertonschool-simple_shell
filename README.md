@@ -31,7 +31,7 @@ The project's purpose is to provide a starting point for individuals new to shel
 
 Designed to run on `Ubuntu 20.04 LTS`, the simple_shell can be installed as follows:
 
-* Clone the current repository with the command: `git clone` `"https://github.com/romeollangozi/holbertonschool-simple_shell"`
+* Clone the current repository with the command: `git clone` `"https://github.com/kristian0808/holbertonschool-simple_shell"`
 * `cd` in to the cloned directory: `cd holbertonschool-simple_shell`
 * Create an executable using: `gcc -Wall -Werror -Wextra -pedantic *.c -o hsh`
 * Run the executable using `./hsh`.
